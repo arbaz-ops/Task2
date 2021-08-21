@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Kc-wB-UbN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Phone 1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" customModule="Task2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TMg-o9-1c2">
+                                <rect key="frame" x="42" y="325" width="333" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="ajM-7h-JZ1"/>
+                                    <constraint firstAttribute="width" constant="333" id="e6h-hM-guE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TMg-o9-1c2" secondAttribute="trailing" constant="39" id="7zX-yc-iBP"/>
+                            <constraint firstItem="TMg-o9-1c2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="E5o-sF-6vT"/>
+                            <constraint firstItem="TMg-o9-1c2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="237" id="gox-jV-dlq"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Phone 1" id="N3i-bH-yMp">
+                        <barButtonItem key="rightBarButtonItem" title="Phone 2" id="zQZ-tb-a0D">
+                            <connections>
+                                <action selector="phone2Tapped:" destination="BYZ-38-t0r" id="0fu-vM-6fI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="image" destination="TMg-o9-1c2" id="GHX-w4-BpM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="64.955357142857139"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="7lU-bf-e2E">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="IxK-qL-3W8" customClass="SecondViewController" customModule="Task2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dvz-fh-V5n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af6-Hu-6Ug">
+                                <rect key="frame" x="20" y="795" width="374" height="56"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="6Hl-6O-Wuw"/>
+                                    <constraint firstAttribute="height" constant="56" id="VjE-Ot-Nwe"/>
+                                </constraints>
+                                <state key="normal" title="Send Image To Phone 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendImageTapped:" destination="IxK-qL-3W8" eventType="touchUpInside" id="Qe9-6c-nbT"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="apk-5j-3Gv">
+                                <rect key="frame" x="41" y="315" width="333" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="333" id="NVh-zh-xNX"/>
+                                    <constraint firstAttribute="height" constant="266" id="Z5S-6T-nWH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZWF-cD-Emc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Af6-Hu-6Ug" firstAttribute="leading" secondItem="ZWF-cD-Emc" secondAttribute="leading" constant="20" id="5YP-LU-TlH"/>
+                            <constraint firstItem="ZWF-cD-Emc" firstAttribute="bottom" secondItem="Af6-Hu-6Ug" secondAttribute="bottom" constant="11" id="CTc-ed-bdb"/>
+                            <constraint firstItem="ZWF-cD-Emc" firstAttribute="trailing" secondItem="Af6-Hu-6Ug" secondAttribute="trailing" constant="20" id="KUY-5D-pqM"/>
+                            <constraint firstItem="apk-5j-3Gv" firstAttribute="leading" secondItem="ZWF-cD-Emc" secondAttribute="leading" constant="41" id="Mok-Pb-6M2"/>
+                            <constraint firstItem="apk-5j-3Gv" firstAttribute="top" secondItem="ZWF-cD-Emc" secondAttribute="top" constant="271" id="SqK-uX-694"/>
+                            <constraint firstItem="ZWF-cD-Emc" firstAttribute="trailing" secondItem="apk-5j-3Gv" secondAttribute="trailing" constant="40" id="iey-UR-mhs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="apk-5j-3Gv" id="7lV-20-JYL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oug-xj-3H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8115942028987" y="64.955357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9lf-6Q-kvt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Kc-wB-UbN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="83c-QO-UZP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tdb-hW-Rwd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTL-5v-WV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="64.955357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pic" width="2560" height="1600"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
